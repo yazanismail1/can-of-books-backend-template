@@ -33,7 +33,7 @@ async function seedData() {
     description: "A Modern Fable on Real Success in Business and in Life.",
     status:"Available"
   })
-  
+    
   const thirdBook = new book({
     title: "Make Your Bed",
     description: "Little Things That Can Change Your Life...and Maybe the World.",
