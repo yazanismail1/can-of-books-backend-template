@@ -27,7 +27,7 @@ async function seedData() {
     description: "An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
     status:"Available"
   })
-
+ 
   const secondBook = new book({
     title: "The leader who had no title",
     description: "A Modern Fable on Real Success in Business and in Life.",
