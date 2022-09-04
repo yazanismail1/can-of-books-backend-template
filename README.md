@@ -1,11 +1,40 @@
-# Start your own "Can of Books" App
+# Project Name
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Yazan Alfarra, Bashar Nobeh
+**Version**: 1.0.0
 
-## What can books do?
+## Overview
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+A high end web app that enables you to see the most recommended books to read.
 
-## Use this template
+## Getting Started
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+1. Create Server
+2. Create a data base
+3. Make the server be able to send request to the data base
+4. Createt the front end
+5. send request to the server
+
+## Architecture
+
+![pic](./class11.png)
+
+## Change Log
+
+04-09-2022 7:54pm - Application now has a fully-functional express server and mongo database with route to fetch the data.
+
+## Estimates
+
+Name of feature: server and mongo DB
+
+Estimate of time needed to complete: 3 hrs
+
+Start time: 5:15pm
+
+Finish time: 7:56pm
+
+Actual time needed to complete: 3 hrs
+
+## Credit and Collaborations
+
+Bashar Nobeh AKA partner, we build the work flow and design the system architecture.
