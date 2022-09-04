@@ -19,7 +19,7 @@ const booksSchema = new mongoose.Schema({
 });
 
 const book = mongoose.model('books', booksSchema);
-
+ 
 // Seed data
 async function seedData() {
   const firstBook = new book({
