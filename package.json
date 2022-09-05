@@ -1,5 +1,5 @@
 {
-  "name": "auth0testback",
+  "name": "can-of-books-backend-template",
   "version": "1.0.0",
   "description": "This repository has starter code to begin work on creating your own online bookshelf.",
   "main": "server.js",
