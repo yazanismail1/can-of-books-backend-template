@@ -11,7 +11,8 @@ app.use(express.json())
 
 //----- mongoose configs -----//
 
-mongoose.connect('mongodb://yazanismial:rj7xvXDmcWdpHcRV@ac-mtvz31q-shard-00-00.yswklz2.mongodb.net:27017,ac-mtvz31q-shard-00-01.yswklz2.mongodb.net:27017,ac-mtvz31q-shard-00-02.yswklz2.mongodb.net:27017/?ssl=true&replicaSet=atlas-erkyp8-shard-0&authSource=admin&retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+const MongoLink = process.env.MONGO
+mongoose.connect(`${MongoLink}`, {useNewUrlParser: true, useUnifiedTopology: true});
 
 const booksSchema = new mongoose.Schema({
   title: String,
