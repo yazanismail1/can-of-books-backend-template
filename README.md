@@ -21,21 +21,23 @@ A high end web app that enables you to see the most recommended books to read.
 
 ## Change Log
 
+06-09-2022 1:47pm - Application now has a fully-functional express server and mongo database with route to fetch and post and delete the data and update the data.
+
 05-09-2022 11:42pm - Application now has a fully-functional express server and mongo database with route to fetch and post and delete the data.
 
 04-09-2022 7:54pm - Application now has a fully-functional express server and mongo database with route to fetch the data.
-
+ 
 ## Estimates
 
-Name of feature: server and mongo DB
+Name of feature: server and mongo DB with POST and DELETE requests
 
-Estimate of time needed to complete: 3 hrs
+Estimate of time needed to complete: 1 hrs
 
-Start time: 4:00pm
+Start time: 12:48pm
 
-Finish time: 11:00pm
+Finish time: 1:48pm
 
-Actual time needed to complete: 7 hrs
+Actual time needed to complete: 1 hrs
 
 ## Credit and Collaborations
 
