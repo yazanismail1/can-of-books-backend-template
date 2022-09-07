@@ -18,7 +18,8 @@ mongoose.connect(`${MongoLink}`, {useNewUrlParser: true, useUnifiedTopology: tru
 const booksSchema = new mongoose.Schema({
   title: String,
   description: String,
-  status: String
+  status: String,
+  name: String
 });
 
 const book = mongoose.model('books', booksSchema);
@@ -28,25 +29,29 @@ async function seedData() {
   const firstBook = new book({
     title: "Atomic Habits",
     description: "An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
-    status:"Life Changing"
+    status:"Life Changing",
+    name: "Admin",
   })
  
   const secondBook = new book({
     title: "The leader who had no title",
     description: "A Modern Fable on Real Success in Business and in Life.",
-    status:"Favorite Five"
+    status:"Favorite Five",
+    name: "Admin",
   })
     
   const thirdBook = new book({
     title: "Make Your Bed",
     description: "Little Things That Can Change Your Life...and Maybe the World.",
-    status:"Reccomended To Me"
+    status:"Reccomended To Me",
+    name: "Admin",
   })
   
    const fourthBook = new book({
     title: "The 5AM Club",
     description: "Own Your Morning. Elevate Your Life.",
-    status:"Life Changing"
+    status:"Life Changing",
+    name: "Admin",
   })
 
   await firstBook.save();
@@ -68,7 +73,8 @@ function homeRouteHandler(req,res){
 app.get('/books', booksRouteHandler)
 
 function booksRouteHandler(req,res){
-  book.find({},(err,result) =>{
+  const name = req.query.name
+  book.find({name:name},(err,result) =>{
     if(err){
       console.log(err)
     }
@@ -89,15 +95,16 @@ app.post('/books', addBookHandler);
 
 async function addBookHandler(req,res) {
 
-  const {title,description,status} = req.body;
+  const {title,description,status,name} = req.body;
   
   await book.create({ 
     title : title,
     description : description,
-    status : status
+    status : status,
+    name: name,
   });
    
-  book.find({},(err,result)=>{
+  book.find({name:name},(err,result)=>{
       if(err)
       {
           console.log(err);
@@ -114,9 +121,10 @@ app.delete('/books/:id',deleteBookHandler);
  
 function deleteBookHandler(req,res) { 
   const bookId = req.params.id; 
+  const name = req.query.name
   book.deleteOne({_id:bookId},(err,result)=>{
       
-      book.find({},(err,result)=>{ 
+      book.find({name:name},(err,result)=>{ 
           if(err)
           {
               console.log(err);
@@ -137,13 +145,13 @@ app.put('/books/:id',updateBookHandler);
 
 function updateBookHandler(req, res){
   const id = req.params.id;
-  const {title,description,status} = req.body;
+  const {title,description,status,name} = req.body;
 
-  book.findByIdAndUpdate(id, {title,description,status}, (err, result) => {
+  book.findByIdAndUpdate(id, {title,description,status,name}, (err, result) => {
     if(err){
       console.log(err);
     } else {
-      book.find({},(err,result)=>{ 
+      book.find({name:name},(err,result)=>{ 
         if(err)
         {
             console.log(err);
